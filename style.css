@@ -1,0 +1,160 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, sans-serif;
+    /* overflow-x: hidden; */
+   
+}
+
+
+.navbar {
+  
+    position: fixed;
+    outline: none;
+    top: 0;
+    width: 100%;
+    background: #6a0dad;
+    padding: 15px 20px;
+    display: flex;
+    justify-content: space-around;
+    gap: 10px;
+    align-items: center;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+    z-index: 1000;
+    transition: top 0.3s ease-in-out, background 0.3s ease-in-out;
+}
+
+/* Navbar hidden state */
+.navbar.hidden {
+    top: -100px; /* Move navbar out of view */
+}
+
+/* Scroll ke sath navbar ka color change */
+.navbar.scrolled {
+    background: #4a0875; /* Darker purple */
+}
+
+
+
+.logo {
+   
+    
+    color: white;
+    font-size: 22px; /* Medium font size */
+    font-weight: bold;
+    margin-left: 4em; /* Left side se gap */
+}
+
+
+.parent-Div{
+    width: 100px;
+    height: 70px;
+    border-radius: 15px;
+
+}
+
+img{
+    width: 100%;
+    height: 100%;
+    border-radius: 100%;
+}
+
+.nav-links {
+    list-style: none;
+    display: flex;
+}
+
+.nav-links li {
+    position: relative;
+    margin: 0 12px; /* Spacing between menu items */
+}
+
+.nav-links li a {
+    position: relative;
+    color: white;
+    text-decoration: none;
+    font-size: 16px; /* Medium font size */
+    transition: background 0.3s ease-in-out, color 0.3s ease-in-out;
+    padding: 10px 15px;
+    display: inline-block;
+    border-radius: 5px; /* Square shape effect */
+}
+
+.nav-links li a:hover {
+    background: rgba(255, 221, 87, 0.3); /* Light yellow background on hover */
+}
+
+.nav-links li a span {
+    position: absolute;
+    bottom: -5px;
+    left: 50%;
+    width: 0;
+    height: 3px;
+    background: #ffdd57; /* Underline color remains same */
+    transition: width 0.3s ease-in-out, left 0.3s ease-in-out;
+    transform: translateX(5%);
+}
+
+.nav-links li a:hover span {
+    width: 100%;
+    left: 0;
+}
+
+.menu-toggle {
+    display: none;
+    flex-direction: column;
+    cursor: pointer;
+}
+
+.menu-toggle span {
+    width: 25px;
+    height: 3px;
+    background: white;
+    margin: 4px;
+    transition: all 0.3s ease;
+}
+
+
+@media screen and (max-width: 768px) {
+    .nav-links {
+        position: absolute;
+        top: 90px;
+        left: 0;
+        width: 100%;
+        background: #6a0dad;
+        text-align: center;
+        flex-direction: column;
+        padding: 0;
+        max-height: 0;
+        overflow: hidden;
+        transform: translateY(-100%);
+        transition:  0.2s ease-in-out   ;
+    }
+
+    .nav-links.active {
+        transform: translateY(0);
+        max-height: 300px; /* Adjust height based on menu items */
+        padding: 15px 0;
+    }
+
+    .nav-links li {
+        padding: 10px 0;
+    }
+
+    .menu-toggle {
+        display: flex;
+    }
+}
+
+
+.section {
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 2rem;
+    color: white;
+    background: #333;
+    margin-top: 60px;
+}
